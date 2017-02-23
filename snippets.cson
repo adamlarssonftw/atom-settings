@@ -1,0 +1,83 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+#
+############################################
+# My snippets
+############################################
+#
+'.source.ts':
+  'console.log':
+    'prefix': 'log'
+    'body': 'console.log(${1:"crash"});$2'
+  'console.log(json)':
+    'prefix': 'logj'
+    'body': 'console.log(\'%j\', ${1:Object});$2'
+  'if':
+    'prefix': 'if'
+    'body': """
+    if ($1) {
+      $2
+    }
+  """
+  'else':
+    'prefix': 'else'
+    'body': """
+    else {
+      $1
+    }
+  """
+  'new class':
+    'prefix': 'cl'
+    'body': """
+    class $1 {
+      $2
+    }
+    """
+  'private function':
+    'prefix': 'prfn'
+    'body': """
+    private $1 {
+      $2
+    };
+    """
+  'public function':
+    'prefix': 'pufn'
+    'body': """
+    public $1 {
+      $2
+    };
+    """
+  'observable.create()':
+    'prefix': 'obs'
+    'body': """
+    Observable.create((o: Observer<$1>) => {
+      o.next($2);
+      o.complete();
+    });
+    """
+  'arrow function':
+    'prefix': '()'
+    'body': """
+    ($1) => {
+      $2
+    }
+    """
